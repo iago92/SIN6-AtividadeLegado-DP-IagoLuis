@@ -34,16 +34,14 @@ public class NotificacaoService { // Sujeito
      * Simula a mudança de estado que aciona as notificações.
      */
     public void notificarObservadores(Pedido pedido) {
-        System.out.println("\n*** Sujeito Notificando Observadores sobre Pedido: " + pedido.getCliente() + " ***");
-        // Itera sobre todos os observadores e chama o método update(Pedido)
+        System.out.println("\n Sujeito Notificando Observadores sobre Pedido: " + pedido.getCliente());
         for (IObserver observer : observers) {
             observer.update(pedido);
         }
     }
 
-    // O método original foi renomeado e simplificado para seguir o padrão
+    // O metodo original foi renomeado e simplificado para seguir o padrão
     public void enviarNotificacoes(Pedido pedido) {
-        // Simplesmente aciona a notificação dos observadores
         notificarObservadores(pedido);
     }
 }
