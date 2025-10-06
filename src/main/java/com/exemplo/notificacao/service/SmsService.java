@@ -4,9 +4,11 @@ import com.exemplo.notificacao.model.Pedido;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SmsService implements IObserver { // Implementa a interface
+// A classe agora implementa a interface do Observer
+public class SmsService implements IObserver { 
     @Override
-    public void update(Pedido pedido) { // Renomeado de 'enviar' para 'update'
+    // trocado o metodo de enviar para o metodo de update da interface
+    public void update(Pedido pedido) { 
         System.out.println("Enviando SMS para " + pedido.getCliente());
     }
 }

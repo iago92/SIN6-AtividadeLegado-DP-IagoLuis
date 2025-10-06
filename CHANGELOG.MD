@@ -12,17 +12,17 @@ O formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/)
 ### Modificado
 - Sem modificações
 
-## [1.1.0] - DATA
+## [1.1.0] - 2025-10-06
 
 ### Adicionado
 
-Foi adicionado a interface do padrão observer no arquivo IObserver.java
+- Implementação da interface IObserver para definir o contrato dos serviços de notificação (Observadores).
 
 ### Corrigido
 
-Foi corrido o erro com a versão do java que impedia a execução do Maven
+- Corrigido o erro de compatibilidade de versão do Java que impedia a execução do Maven.
 
 ### Modificado
 
-Foi modificado os arquivos EmailService.java, PushService.java e SmsService.java
-Foi alterado o arquivo NotificaçãoService.java o tornando o sujeito do padrão Observer com metodos para adicionar e remover observadores e um metodo para notificar
+- O serviço "NotificacaoService.java" foi modificado para atuar como o Sujeito, incluindo a lógica para manter e notificar os observadores com os métodos addObserver, removeObserver e notificarObservadores.
+- Os serviços de notificação EmailService.java, PushService.java, e SmsService.java foram modificados para implementar a interface do observador e agir como Observadores Concretos.
